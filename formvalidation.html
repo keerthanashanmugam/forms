@@ -1,6 +1,10 @@
 <html>
 	<head>
-	
+	<style>
+		input:invalid{
+		border: #999;
+		}
+		</style>
 	
 	
 	
@@ -21,13 +25,19 @@
 			<button>submit</button>
 			
 		</form>
+		<style>
+		input:invalid{
+		border: solid green;
+		}
+		</style>
+	
 		<script>
 		
 		var email = document.getElementById("mail");
 		
 		email.addEventListener("keyup", function (event) {
-		if(email.validity.typeMismatch) 
-			{email.setCustomValidity("I expect an e-mail");
+		if(!email.willValidate) 
+			{email.setCustomValidity("I expect an e-mail,dear");
 		
 			}	 
 		else{email.setCustomValidity("");
