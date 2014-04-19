@@ -1,0 +1,52 @@
+<html>
+	<head>
+	
+	
+	
+	
+	</head>
+	<body>
+		<form>
+			<label for="name">name<label>
+				<input required id="name" pattern="[a-z]+"></br>
+			
+			<label>email</label>
+				<input type="email" required id="mail"></br>
+			<label>phno</label>
+				<input type="tel" id="phno" pattern="[0-9]{10,10}" required></br>
+			
+			<label>password</label>
+				<input type="password" id="password" pattern="[^@#]+" title="'@', '#' not allowed" >
+			
+			<button>submit</button>
+			
+		</form>
+		<script>
+		
+		var email = document.getElementById("mail");
+		
+		email.addEventListener("keyup", function (event) {
+		if(email.validity.typeMismatch) 
+			{email.setCustomValidity("I expect an e-mail");
+		
+			}	 
+		else{email.setCustomValidity("");
+			}
+		});
+		var emal = document.getElementById("password");
+		
+		emal.addEventListener("keyup", function (event) {
+		if(emal.validity.typeMismatch) 
+			{emal.setCustomValidity("@ not allowed");
+		
+			}	 
+		else{emal.setCustomValidity("");
+			}
+		});
+		
+	
+	</script>
+		
+	</body>
+</html>
+</html>
